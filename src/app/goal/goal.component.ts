@@ -23,7 +23,7 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal)
 
   }
-  /*deleteGoal(isComplete, index) {
+  deleteGoal(isComplete, index) {
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.goals[index].name}`)
 
@@ -34,7 +34,7 @@ export class GoalComponent implements OnInit {
   }
   toogleDetails(index) {
     this.goals[index].showDescription = !this.goals[index].showDescription;
-  }*/
+  }
 
   constructor() { }
   ngOnInit() {
