@@ -7,7 +7,6 @@ import { Goal } from '../goal'
   styleUrls: ['./goal.component.css']
 })
 export class GoalComponent implements OnInit {
-
   goals = [
     new Goal(1, 'Watch Finding Nemo', 'Find an online version and watch merlin find his son', new Date(2018, 3, 14)),
     new Goal(2, 'Buy Cookies', 'I have to buy cookies for the parrot', new Date(2018, 6, 9)),
@@ -17,8 +16,14 @@ export class GoalComponent implements OnInit {
     new Goal(6, 'Plot my world domination plan', 'Cause I am an evil overlord', new Date(2018, 3, 14)),
 
   ]
+  addNewGoal(goal) {
+    let goalLength = this.goals.length;
+    goal.id = goalLength + 1;
+    goal.completeDate = new Date(goal.completeDate)
+    this.goals.push(goal)
 
-  deleteGoal(isComplete, index) {
+  }
+  /*deleteGoal(isComplete, index) {
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.goals[index].name}`)
 
@@ -29,7 +34,7 @@ export class GoalComponent implements OnInit {
   }
   toogleDetails(index) {
     this.goals[index].showDescription = !this.goals[index].showDescription;
-  }
+  }*/
 
   constructor() { }
   ngOnInit() {
